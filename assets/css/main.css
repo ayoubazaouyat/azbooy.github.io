@@ -2312,6 +2312,6 @@ input, select, textarea {
 			}
 
 		}
-.charta {
+#charta {
 	text-decoration: line-through;
 }
