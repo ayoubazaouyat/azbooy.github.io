@@ -1,150 +1,262 @@
-<!DOCTYPE HTML>
-<!--
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>AYOUB AZAOUYAT </title>
-		<link rel="shortcut icon" href="images/favicon.ico" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>AYOUB AZAOUYAT </title>
+	<style>
+		:root {
+			color-scheme: dark;
+		}
 
-		<!-- Header -->
-			<header id="header">
-				<h1 class="ismi">AYOUB AZAOUYAT</h1>
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#one">Who I Am</a></li>
-						<li><a href="#work">My Work</a></li>
-					</ul>
-				</nav>
-			</header>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
 
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content">
-					<header>
-						<h2>Hello.</h2>
-					</header>
-					<p>Welcome to <strong>MY PORTFOLIO</strong> .</p>
-					<footer>
-						<a href="#one" class="button style2 down">More</a>
-					</footer>
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: clamp(1.5rem, 6vw, 3.5rem);
+			font-family: "Poppins", "Segoe UI", sans-serif;
+			color: #f7f8fb;
+			background: radial-gradient(circle at top, #343a6b, #13152c 55%, #080912);
+		}
+
+		.wrapper {
+			text-align: center;
+			max-width: 640px;
+			padding: 0 clamp(1rem, 6vw, 3rem);
+		}
+
+		h1 {
+			margin: 0 0 0.75rem;
+			font-size: clamp(1.9rem, 5vw, 3.1rem);
+			letter-spacing: 0.015em;
+		}
+
+		p {
+			margin: 0;
+			font-size: clamp(1rem, 3.4vw, 1.2rem);
+			color: #aeb7ff;
+			line-height: 1.5;
+		}
+
+		.wrapper > * + * {
+			margin-top: clamp(0.75rem, 2.4vw, 1.5rem);
+		}
+
+		.sub {
+			margin-top: 0.9rem;
+			color: #c9cef9;
+			font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+		}
+
+		.meme {
+			margin: clamp(1.8rem, 5vw, 2.4rem) auto 0;
+			display: flex;
+			flex-direction: column;
+			gap: 0.85rem;
+			align-items: center;
+		}
+
+		.meme .frame {
+			position: relative;
+			width: clamp(220px, 68vw, 420px);
+			min-height: 180px;
+			border-radius: 18px;
+			border: 1px solid rgba(255, 255, 255, 0.16);
+			box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+			background: rgba(4, 6, 20, 0.85);
+			overflow: hidden;
+		}
+
+		.meme img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			background: #010208;
+		}
+
+		.meme .placeholder {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1.5rem;
+			color: rgba(226, 229, 255, 0.75);
+			font-size: 1.05rem;
+			text-align: center;
+			line-height: 1.4;
+			background: linear-gradient(145deg, rgba(58, 66, 123, 0.35), rgba(37, 38, 80, 0.6));
+		}
+
+		.meme figcaption {
+			margin: 0;
+			font-size: 0.95rem;
+			color: rgba(226, 229, 255, 0.72);
+			max-width: 360px;
+			line-height: 1.45;
+		}
+
+		.meme-actions {
+			margin-top: 1.1rem;
+			display: flex;
+			justify-content: center;
+			gap: 0.85rem;
+			flex-wrap: wrap;
+		}
+
+		.meme-link,
+		.meme-refresh {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.65rem 1.6rem;
+			border-radius: 14px;
+			font-size: 0.94rem;
+			font-weight: 600;
+			text-decoration: none;
+			cursor: pointer;
+			transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+			border: none;
+		}
+
+		.meme-link {
+			color: #e7edff;
+			background: rgba(255, 255, 255, 0.08);
+			border: 1px solid rgba(255, 255, 255, 0.16);
+		}
+
+		.meme-refresh {
+			color: #0a0f2b;
+			background: linear-gradient(135deg, #7b7efc, #4ad7ff);
+			box-shadow: 0 16px 28px rgba(82, 130, 255, 0.25);
+		}
+
+		.meme-link:hover,
+		.meme-refresh:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+		}
+
+		.meme-refresh:disabled {
+			opacity: 0.55;
+			cursor: wait;
+			box-shadow: none;
+			transform: none;
+		}
+
+		.status {
+			margin-top: 0.8rem;
+			font-size: 0.92rem;
+			color: rgba(255, 255, 255, 0.62);
+			min-height: 1.2em;
+		}
+
+		@media (max-width: 520px) {
+			.meme figcaption {
+				font-size: 0.92rem;
+			}
+		}
+	</style>
+</head>
+<body>
+		<main class="wrapper">
+			<h1>Oops, forgot to update this!</h1>
+			<p>Coming soon...</p>
+			<p class="sub">In the meanwhile, enjoy this random meme:</p>
+			<figure class="meme" role="group" aria-labelledby="meme-caption status-message">
+				<div class="frame">
+					<img id="meme-image" alt="" hidden />
+					<div class="placeholder" id="meme-placeholder">Fetching fresh internet nonsense...</div>
 				</div>
-			</section>
+				<figcaption id="meme-caption"></figcaption>
+			</figure>
+			<div class="meme-actions">
+				<a id="meme-link" class="meme-link" href="#" target="_blank" rel="noopener noreferrer">View original post</a>
+				<button id="meme-refresh" class="meme-refresh" type="button">Show me another</button>
+			</div>
+			<div class="status" id="status-message"></div>
+		</main>
+		<script>
+			(() => {
+				const apiUrl = "https://meme-api.com/gimme";
+				const image = document.getElementById("meme-image");
+				const caption = document.getElementById("meme-caption");
+				const placeholder = document.getElementById("meme-placeholder");
+				const link = document.getElementById("meme-link");
+				const refreshButton = document.getElementById("meme-refresh");
+				const statusMessage = document.getElementById("status-message");
 
-		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>Who am I?</h2>
-					</header>
-					<p>As a computer science professional based in Germany, I am deeply passionate about software architecture and deep learning, as well as sports, particularly basketball. With a strong background in computer science and a love for cutting-edge technologies, I am dedicated to exploring the intersection of these two fields and developing innovative solutions. My unique combination of technical skills and creative vision, honed through my background in design and photography, allows me to approach software architecture with a design-thinking mindset. In my free time, I can be found on the basketball court, where I channel my passion for sports and strive to improve my game. I am constantly striving to improve and expand my knowledge and skillset, both in software architecture and deep learning, and I am committed to delivering high-quality results and making a positive impact in the industry.</p>
-				</div>
-				<a href="#work" class="button style2 down anchored">Next</a>
-			</section>
+				async function fetchMeme() {
+					setLoading(true, "Fetching fresh internet nonsense...");
+					try {
+						const response = await fetch(apiUrl, { cache: "no-store" });
+						if (!response.ok) {
+							throw new Error(`Request failed with status ${response.status}`);
+						}
+						const data = await response.json();
+						updateMeme(data);
+					} catch (error) {
+						handleError(error);
+					}
+				}
 
-		<!-- Two -->
-			<!--<section id="two" class="main style2 left dark fullscreen"> to remake it later
-				<div class="content box style2">
-					<header>
-						<h2>What I Do</h2>
-					</header>
-					<p>I am an informatics bachlore student .</p>
-				</div>
-				<a href="#work" class="button style2 down anchored">Next</a>
-			</section>
+				function setLoading(isLoading, message = "") {
+					refreshButton.disabled = isLoading;
+					statusMessage.textContent = isLoading ? "Loading a new meme..." : "";
+					placeholder.hidden = !isLoading;
+					image.hidden = isLoading;
+					if (isLoading) {
+						placeholder.textContent = message;
+					} else {
+						placeholder.textContent = "";
+					}
+				}
 
-		<!-- Work -->
-			<section id="work" class="main style3 primary">
-				<div class="content">
-					<header>
-						<h2>My Work</h2>
-						<p>here you will find all my work pictures,videos, and coding project</p>
-					</header>
+				function updateMeme(data) {
+					const { url, title, postLink } = data;
+					if (!url || !title) {
+						throw new Error("The meme API returned unexpected data.");
+					}
+					image.onload = () => {
+						setLoading(false);
+					};
+					image.onerror = () => {
+						handleError(new Error("Couldn't load the meme image."));
+					};
+					image.src = url;
+					image.alt = title;
+					caption.textContent = title;
+					link.href = postLink || url;
+					if (image.complete) {
+						image.onload();
+					}
+				}
 
-					<!-- Gallery  -->
-						<div class="gallery">
-							<article class="from-left sura">
-								<a href="IMG_0287.jpg" class="image fit"><img src="IMG_0287.jpg" title="Elgezira-Agadir" alt="" /></a>
-							</article>
-							<article class="from-right sura">
-								<a href="IMG_0310.jpg" class="image fit"><img src="IMG_0310.jpg" title="Elgezira-Agadir" alt="" /></a>
-							</article>
-							<article class="from-left sura">
-								<a href="IMG_4068.jpg" class="image fit"><img src="IMG_4068.jpg" title="Tangier" alt="" /></a>
-							</article>
-							<article class="from-right sura">
-								<a href="IMG_4949.jpg" class="image fit"><img src="IMG_4949.jpg" title="Elhoceima" alt="" /></a>
-							</article>
-							<article class="from-left sura">
-								<a href="IMG_5507.jpg" class="image fit"><img src="IMG_5507.jpg" title="Nürnberg" alt="" /></a>
-							</article>
-							<article class="from-right sura">
-								<a href="IMG_5125.jpg" class="image fit"><img src="IMG_5125.jpg" title="Remilat-Tangier" alt="" /></a>
-							</article>
-							
-						</div>
+				function handleError(error) {
+					console.error(error);
+					refreshButton.disabled = false;
+					placeholder.hidden = false;
+					image.hidden = true;
+					placeholder.textContent = "Whoops, memes are hiding from us right now. Try again in a sec!";
+					statusMessage.textContent = "Something went wrong fetching the meme.";
+				}
 
-				</div>
-			</section>
+				refreshButton.addEventListener("click", () => {
+					setLoading(true, "Digging up another meme...");
+					fetchMeme();
+				});
 
-		<!-- Contact -->
-			<!--<section id="contact" class="main style3 secondary">
-				<div class="content">
-					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
-					</header>
-					<div class="box">
-						<form method="post" action="contact.php">
-							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-
-				<!-- Icons -->
-					<ul class="icons">
-						<li><a href="https://twitter.com/AyoubAzaouyat?s=08" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.facebook.com/profile.php?id=100015156432669" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.instagram.com/azaouyat.jpg/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://www.linkedin.com/in/ayoub-azaouyat-14863718b/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-					</ul>
-
-				<!-- Menu -->
-					<ul class="menu">
-						<li>&copy; Untitled</li>
-					</ul>
-
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+				fetchMeme();
+			})();
+		</script>
 	</body>
 </html>
